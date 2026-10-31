@@ -1,0 +1,84 @@
+<!--knowledge.wxml-->
+<view class="container">
+  <view class="search-box">
+    <view class="search-input-wrap">
+      <image class="search-icon" src="/images/icons/search.png"></image>
+      <input class="search-input" placeholder="搜索游泳知识" value="{{searchValue}}" bindinput="onSearch" confirm-type="search"/>
+      <image wx:if="{{searchValue}}" class="clear-icon" src="/images/icons/clear.png" bindtap="clearSearch"></image>
+    </view>
+  </view>
+  
+  <view class="category-section">
+    <scroll-view class="category-scroll" scroll-x="true" enhanced show-scrollbar="false">
+      <view class="category-list">
+        <view class="category-item {{activeCategory === 0 ? 'active' : ''}}" bindtap="selectCategory" data-id="0">
+          <text>全部</text>
+        </view>
+        <view class="category-item {{activeCategory === item.id ? 'active' : ''}}" 
+              wx:for="{{categories}}" 
+              wx:key="id"
+              bindtap="selectCategory"
+              data-id="{{item.id}}">
+          <image class="category-icon" src="{{item.icon}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  
+  <view class="recommended-section" wx:if="{{activeCategory === 0 && !searchValue}}">
+    <view class="section-title">推荐阅读</view>
+    <view class="recommended-list">
+      <view class="recommended-item" 
+            wx:for="{{articles}}" 
+            wx:key="id"
+            wx:if="{{item.isRecommended}}"
+            bindtap="viewArticle"
+            data-id="{{item.id}}">
+        <image class="recommended-cover" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="recommended-info">
+          <view class="recommended-title">{{item.title}}</view>
+          <view class="recommended-meta">
+            <text class="category-tag">{{item.category}}</text>
+            <text class="view-count">{{item.views}}阅读</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="article-section">
+    <view class="section-title">{{activeCategory === 0 ? '全部文章' : (searchValue ? '搜索结果' : '分类文章')}}</view>
+    <view class="article-list">
+      <view class="article-item" 
+            wx:for="{{getFilteredArticles()}}" 
+            wx:key="id"
+            bindtap="viewArticle"
+            data-id="{{item.id}}">
+        <image class="article-cover" src="{{item.cover}}" mode="aspectFill"></image>
+        <view class="article-info">
+          <view class="article-title">{{item.title}}</view>
+          <view class="article-summary">{{item.summary}}</view>
+          <view class="article-meta">
+            <text class="publish-date">{{item.publishDate}}</text>
+            <view class="interaction">
+              <view class="likes">
+                <image src="/images/icons/like.png"></image>
+                <text>{{item.likes}}</text>
+              </view>
+              <view class="views">
+                <image src="/images/icons/view.png"></image>
+                <text>{{item.views}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <view class="empty-tip" wx:if="{{getFilteredArticles().length === 0}}">
+        <image class="empty-icon" src="/images/icons/empty.png"></image>
+        <text>暂无相关文章</text>
+      </view>
+    </view>
+  </view>
+</view>

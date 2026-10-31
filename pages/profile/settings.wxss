@@ -1,0 +1,106 @@
+/* settings.wxss */
+.container {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+/* 设置列表 */
+.settings-list {
+  padding: 30rpx;
+}
+
+.settings-group {
+  background-color: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+}
+
+.item-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.item-icon.notification {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTEyIDIyYzEuMSAwIDItLjkgMi0yaC00YzAgMS4xLjg5IDIgMiAyem02LTZWOWMwLTMuMDctMS42My01LjY0LTQuNS02LjMyVjJjMC0uODMtLjY3LTEuNS0xLjUtMS41cy0xLjUuNjctMS41IDEuNXYuNjhDNy42NCAzLjM2IDYgNS45MiA2IDl2N2wtMiAydjFoMTZ2LTFsLTItMnoiLz48L3N2Zz4=');
+}
+
+.item-icon.privacy {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTE4IDhoLTFWNmMwLTIuNzYtMi4yNC01LTUtNVM3IDMuMjQgNyA2djJINmMtMS4xIDAtMiAuOS0yIDJ2MTBjMCAxLjEuOSAyIDIgMmgxMmMxLjEgMCAyLS45IDItMlYxMGMwLTEuMS0uOS0yLTItMnptLTYgOWMtMS4xIDAtMi0uOS0yLTJzLjktMiAyLTIgMiAuOSAyIDItLjkgMi0yIDJ6bTMuMS05SDguOVY2YzAtMS43MSAxLjM5LTMuMSAzLjEtMy4xIDEuNzEgMCAzLjEgMS4zOSAzLjEgMy4xdjJ6Ii8+PC9zdmc+');
+}
+
+.item-icon.cache {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTE5LjM1IDEwLjA0QzE4LjY3IDYuNTkgMTUuNjQgNCAxMiA0IDkuMTEgNCA2LjYgNS42NCA1LjM1IDguMDQgMi4zNCA4LjM2IDAgMTAuOTEgMCAxNGMwIDMuMzEgMi42OSA2IDYgNmgxM2MyLjc2IDAgNS0yLjI0IDUtNSAwLTIuNjQtMi4wNS00Ljc4LTQuNjUtNC45NnpNMTQgMTN2NGgtNHYtNEg3bDUtNSA1IDVoLTN6Ii8+PC9zdmc+');
+}
+
+.item-icon.update {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTIxIDEwLjEyaC02LjFsLjEtLjVsLjUtMi4xbC45LTMuOUMxNi42IDIuNzMgMTUuODcgMiAxNSAySDlDNy45IDIgNyAyLjkgNyA0djYuMDJDNyAxMS4yMyA3Ljc3IDEyIDguNyAxMmg2LjZsLS42IDIuNWwtLjAxLjAxTDE0LjUyIDIwSDIwYzEuMSAwIDItLjkgMi0ydi03Ljg4QzIyIDEwLjEyIDIxIDEwLjEyIDIxIDEwLjEyek00IDE5aDRWNUg0djE0eiIvPjwvc3ZnPg==');
+}
+
+.item-icon.about {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTEgMTVoLTJ2LTZoMnY2em0wLThoLTJ2LTJoMnYyeiIvPjwvc3ZnPg==');
+}
+
+.item-icon.terms {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTE0IDJINmMtMS4xIDAtMiAuOS0yIDJ2MTZjMCAxLjEuOSAyIDIgMmgxMmMxLjEgMCAyLS45IDItMlY4bC02LTZ6bS0yIDhWMy41TDE3LjUgOUgxMnptLTEgOWgtMnYtMmgydjJ6bTAtM2gtMlY5aDJ2N3oiLz48L3N2Zz4=');
+}
+
+.item-icon.policy {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzNCODJGNiI+PHBhdGggZD0iTTEyIDFMMyA1djZjMCA1LjU1IDMuODQgMTAuNzQgOSAxMiA1LjE2LTEuMjYgOS02LjQ1IDktMTJWNWwtOS00em0wIDEwLjk5aDdjLS41MyA0LjEyLTMuMjggNy43OS03IDguOTRWMTJIMVY2LjNsNy0zLjExdjguOGg0eiIvPjwvc3ZnPg==');
+}
+
+.item-title {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.item-arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 2rpx solid #bbb;
+  border-right: 2rpx solid #bbb;
+  transform: rotate(45deg);
+}
+
+.cache-size, .version-info {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 退出登录 */
+.logout-section {
+  padding: 30rpx;
+  margin-top: 60rpx;
+}
+
+.logout-btn {
+  background-color: #fff;
+  color: #FF3B30;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  width: 100%;
+  border: 1rpx solid #FF3B30;
+}

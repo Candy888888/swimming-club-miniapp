@@ -1,0 +1,241 @@
+/* growth.wxss */
+.container {
+  padding: 0 0 30rpx 0;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 头部用户信息 */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #3B82F6;
+  color: #fff;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 20rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.5);
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.user-level {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.level-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}
+
+/* 成长统计卡片 */
+.growth-stats {
+  padding: 30rpx;
+}
+
+.stat-card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.stat-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.stat-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-name {
+  color: #666;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #333;
+}
+
+/* 精彩时刻网格 */
+.moments-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+
+.moment-item {
+  position: relative;
+  border-radius: 12rpx;
+  overflow: hidden;
+  height: 200rpx;
+}
+
+.moment-item image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.moment-date {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+  padding: 10rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+/* 成长时间线 */
+.growth-timeline {
+  padding: 0 30rpx 30rpx;
+}
+
+.timeline-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  color: #333;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 20rpx;
+  top: 0;
+  bottom: 0;
+  width: 2rpx;
+  background-color: #e0e0e0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 60rpx;
+  margin-bottom: 40rpx;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 11rpx;
+  top: 16rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-date {
+  font-size: 26rpx;
+  color: #999;
+  margin-bottom: 10rpx;
+}
+
+.timeline-card {
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.feedback-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.feedback-coach {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.feedback-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 16rpx;
+}
+
+.feedback-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 24rpx;
+  color: #3B82F6;
+  background-color: rgba(59, 130, 246, 0.1);
+  padding: 6rpx 16rpx;
+  border-radius: 30rpx;
+  margin-right: 12rpx;
+  margin-bottom: 8rpx;
+}
+
+/* 操作按钮 */
+.action-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+
+.action-btn {
+  flex: 1;
+  margin: 0 10rpx;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+
+.primary {
+  background-color: #3B82F6;
+  color: #fff;
+}
+
+.secondary {
+  background-color: #fff;
+  color: #3B82F6;
+  border: 1rpx solid #3B82F6;
+}

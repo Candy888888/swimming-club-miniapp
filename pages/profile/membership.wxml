@@ -1,0 +1,110 @@
+<!--membership.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="header-bg" src="/images/membership-bg.jpg" mode="aspectFill"></image>
+    <view class="header-content">
+      <view class="header-title">会员招募</view>
+      <view class="header-subtitle">加入我们，享受专业游泳体验</view>
+    </view>
+  </view>
+  
+  <view class="tab-header">
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+      <text>会员权益</text>
+    </view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+      <text>会员评价</text>
+    </view>
+    <view class="tab-item {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">
+      <text>常见问题</text>
+    </view>
+  </view>
+  
+  <view class="tab-content">
+    <!-- 会员权益 -->
+    <view class="membership-section" wx:if="{{currentTab === 0}}">
+      <view class="membership-phase-selector">
+        <view class="phase-btn {{isPreOpenPhase ? 'active' : ''}}" bindtap="switchPhase" data-phase="pre">业前权益</view>
+        <view class="phase-btn {{!isPreOpenPhase ? 'active' : ''}}" bindtap="switchPhase" data-phase="post">开业后权益</view>
+      </view>
+      
+      <view class="membership-list">
+        <view class="membership-card" 
+              wx:for="{{membershipLevels}}" 
+              wx:key="id"
+              bindtap="selectMembership"
+              data-id="{{item.id}}">
+          <image class="card-image" src="{{item.cardImage}}" mode="aspectFit"></image>
+          <view class="recommended-tag" wx:if="{{item.isRecommended}}">推荐</view>
+          
+          <view class="card-content">
+            <view class="card-header">
+              <view class="card-name">{{item.name}}</view>
+              <view class="card-duration">{{item.duration}}</view>
+              <view class="card-price-section">
+                <text class="price-symbol">¥</text>
+                <text class="price">{{item.price}}</text>
+                <text class="original-price">¥{{item.originalPrice}}</text>
+              </view>
+            </view>
+            
+            <view class="benefits-title">{{isPreOpenPhase ? '业前权益' : '开业后权益'}}</view>
+            <view class="benefits-list">
+              <view class="benefit-item" 
+                    wx:for="{{isPreOpenPhase ? item.benefits : item.postOpenBenefits}}" 
+                    wx:for-item="benefit" 
+                    wx:key="*this">
+                <image class="check-icon" src="/images/icons/check.png"></image>
+                <text>{{benefit}}</text>
+              </view>
+            </view>
+            <button class="join-btn" style="background-color: {{item.color}};">立即加入</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 会员评价 -->
+    <view class="testimonial-section" wx:if="{{currentTab === 1}}">
+      <view class="testimonial-list">
+        <view class="testimonial-item" wx:for="{{testimonials}}" wx:key="id">
+          <view class="testimonial-header">
+            <image class="avatar" src="{{item.avatar}}"></image>
+            <view class="user-info">
+              <view class="user-name">{{item.name}}</view>
+              <view class="user-level">{{item.level}}</view>
+            </view>
+            <view class="rating">
+              <image class="star" 
+                     wx:for="{{item.rating}}" 
+                     wx:for-item="star" 
+                     wx:key="*this" 
+                     src="/images/icons/star-filled.png"></image>
+            </view>
+          </view>
+          <view class="testimonial-content">{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 常见问题 -->
+    <view class="faq-section" wx:if="{{currentTab === 2}}">
+      <view class="faq-list">
+        <view class="faq-item" wx:for="{{faqs}}" wx:key="question" bindtap="toggleFaq" data-index="{{index}}">
+          <view class="faq-question">
+            <text>{{item.question}}</text>
+            <image class="arrow-icon" src="/images/icons/{{item.isExpanded ? 'arrow-up' : 'arrow-down'}}.png"></image>
+          </view>
+          <view class="faq-answer" wx:if="{{item.isExpanded}}">
+            <text>{{item.answer}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="contact-section">
+    <view class="section-title">还有疑问？</view>
+    <button class="contact-btn" bindtap="contactService">联系客服</button>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g>
+    <!-- 泳衣轮廓 -->
+    <path d="M40 25 C40 25, 35 30, 35 40 C35 50, 40 60, 50 60 C60 60, 65 50, 65 40 C65 30, 60 25, 60 25 Z" fill="#5DADE2" />
+    
+    <!-- 泳衣肩带 -->
+    <path d="M40 25 C40 25, 35 15, 30 15 C25 15, 25 25, 30 30" fill="#5DADE2" />
+    <path d="M60 25 C60 25, 65 15, 70 15 C75 15, 75 25, 70 30" fill="#5DADE2" />
+    
+    <!-- 泳衣装饰线 -->
+    <path d="M40 40 C40 40, 45 45, 50 45 C55 45, 60 40, 60 40" fill="none" stroke="#2874A6" stroke-width="1" />
+    <path d="M40 50 C40 50, 45 55, 50 55 C55 55, 60 50, 60 50" fill="none" stroke="#2874A6" stroke-width="1" />
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<!--growth.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="user-avatar" src="{{userInfo.avatarUrl || '/images/icons/default-avatar.png'}}" mode="aspectFill"></image>
+    <view class="user-info">
+      <view class="user-name">{{userInfo.nickName || '游客'}}</view>
+      <view class="user-level">
+        <image src="/images/icons/vip.png" class="level-icon"></image>
+        <text>{{userInfo.memberLevel || '普通会员'}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="growth-stats">
+    <view class="stat-card">
+      <view class="stat-title">我的成绩</view>
+      <view class="stat-list">
+        <view class="stat-item" wx:for="{{achievements}}" wx:key="id">
+          <view class="stat-name">{{item.name}}</view>
+          <view class="stat-value">{{item.value}}</view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="stat-card">
+      <view class="stat-title">精彩时刻</view>
+      <view class="moments-grid">
+        <view class="moment-item" wx:for="{{moments}}" wx:key="id" bindtap="previewImage" data-url="{{item.image}}">
+          <image src="{{item.image}}" mode="aspectFill"></image>
+          <view class="moment-date">{{item.date}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="growth-timeline">
+    <view class="timeline-title">阶段性反馈</view>
+    <view class="timeline">
+      <view class="timeline-item" wx:for="{{feedbacks}}" wx:key="id">
+        <view class="timeline-dot" style="background-color: {{item.color}}"></view>
+        <view class="timeline-content">
+          <view class="timeline-date">{{item.date}}</view>
+          <view class="timeline-card">
+            <view class="feedback-header">
+              <view class="feedback-title">{{item.title}}</view>
+              <view class="feedback-coach">教练：{{item.coach}}</view>
+            </view>
+            <view class="feedback-content">{{item.content}}</view>
+            <view class="feedback-tags">
+              <view class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="action-section">
+    <button class="action-btn primary" bindtap="navigateToBooking">预约课程</button>
+    <button class="action-btn secondary" bindtap="navigateToSchedule">查看课表</button>
+  </view>
+</view>

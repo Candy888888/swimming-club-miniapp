@@ -1,0 +1,71 @@
+<!--invite.wxml-->
+<view class="container">
+  <view class="invite-header">
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatar}}"></image>
+      <text class="nickname">{{userInfo.nickname}}</text>
+    </view>
+    
+    <view class="invite-code-box">
+      <view class="code-label">我的邀请码</view>
+      <view class="code-value">{{userInfo.inviteCode}}</view>
+      <button class="btn-copy" bindtap="copyInviteCode">复制</button>
+    </view>
+    
+    <view class="invite-actions">
+      <button class="btn-share" bindtap="shareToFriend">
+        <image src="/images/icons/share.png"></image>
+        <text>分享给好友</text>
+      </button>
+      <button class="btn-poster" bindtap="generatePoster">
+        <image src="/images/icons/poster.png"></image>
+        <text>生成海报</text>
+      </button>
+    </view>
+  </view>
+  
+  <view class="rewards-section">
+    <view class="section-title">邀请奖励</view>
+    <view class="rewards-list">
+      <view class="reward-item" wx:for="{{inviteRewards}}" wx:key="id">
+        <image class="reward-icon" src="{{item.icon}}"></image>
+        <view class="reward-info">
+          <view class="reward-title">{{item.title}}</view>
+          <view class="reward-desc">{{item.description}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="records-section">
+    <view class="section-title">邀请记录</view>
+    <view class="records-list">
+      <view class="record-item" wx:for="{{inviteRecords}}" wx:key="id">
+        <image class="record-avatar" src="{{item.avatar}}"></image>
+        <view class="record-info">
+          <view class="record-name">{{item.nickname}}</view>
+          <view class="record-time">{{item.time}}</view>
+        </view>
+        <view class="record-status {{item.status === '已购课' ? 'success' : ''}}">{{item.status}}</view>
+      </view>
+      
+      <view class="empty-tip" wx:if="{{inviteRecords.length === 0}}">
+        <image class="empty-icon" src="/images/icons/empty.png"></image>
+        <text>暂无邀请记录</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="rules-section">
+    <view class="rules-title" bindtap="viewInviteRules">
+      <text>活动规则</text>
+      <image class="icon-arrow" src="/images/icons/arrow.png"></image>
+    </view>
+    <view class="rules-content">
+      <view class="rule-item">1. 每成功邀请1位好友注册并完成实名认证，即可获得奖励</view>
+      <view class="rule-item">2. 好友需通过您的专属邀请码或邀请链接注册</view>
+      <view class="rule-item">3. 奖励将在好友完成指定任务后自动发放</view>
+      <view class="rule-item">4. 活动最终解释权归新升潮游泳馆所有</view>
+    </view>
+  </view>
+</view>

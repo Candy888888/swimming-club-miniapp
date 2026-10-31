@@ -1,0 +1,67 @@
+<!--booking.wxml-->
+<view class="page">
+  <view class="booking-header">
+    <view class="header-tabs">
+      <view class="tab {{activeTab === 'venue' ? 'active' : ''}}" bindtap="switchTab" data-tab="venue">场馆预约</view>
+      <view class="tab {{activeTab === 'course' ? 'active' : ''}}" bindtap="switchTab" data-tab="course">课程预约</view>
+    </view>
+  </view>
+  
+  <view class="booking-content" wx:if="{{activeTab === 'venue'}}">
+    <view class="calendar-section">
+      <view class="section-title">选择日期</view>
+      <!-- 日历组件 -->
+      <view class="calendar">
+        <view class="calendar-header">
+          <view class="arrow" bindtap="prevWeek">《</view>
+          <view class="current-month">{{currentMonth}}</view>
+          <view class="arrow" bindtap="nextWeek">》</view>
+        </view>
+        <view class="weekdays">
+          <view class="weekday" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
+        </view>
+        <view class="days">
+          <view class="day {{item.isSelected ? 'selected' : ''}} {{item.isToday ? 'today' : ''}}" 
+                wx:for="{{days}}" wx:key="index" bindtap="selectDay" data-index="{{index}}">
+            <view class="day-number">{{item.day}}</view>
+            <view class="day-text">{{item.weekday}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="time-section">
+      <view class="section-title">选择时间段</view>
+      <view class="time-slots">
+        <view class="time-slot {{item.isSelected ? 'selected' : ''}} {{!item.isAvailable ? 'disabled' : ''}}" 
+              wx:for="{{timeSlots}}" wx:key="id" bindtap="selectTimeSlot" data-id="{{item.id}}">
+          <view class="time-text">{{item.time}}</view>
+          <view class="availability">{{item.isAvailable ? '可预约' : '已约满'}}</view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="submit-section">
+      <button class="submit-btn" bindtap="submitBooking">立即预约</button>
+    </view>
+  </view>
+  
+  <view class="booking-content" wx:if="{{activeTab === 'course'}}">
+    <view class="course-list">
+      <view class="course-item" wx:for="{{courses}}" wx:key="id" bindtap="selectCourse" data-id="{{item.id}}">
+        <image src="{{item.image}}" class="course-image"></image>
+        <view class="course-info">
+          <view class="course-name">{{item.name}}</view>
+          <view class="course-desc">{{item.description}}</view>
+          <view class="course-details">
+            <view class="course-price">¥{{item.price}}</view>
+            <view class="course-duration">{{item.duration}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+
+</view>

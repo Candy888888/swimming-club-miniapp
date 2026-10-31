@@ -1,0 +1,32 @@
+<!--specialty.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="title">专项体能训练</view>
+    <view class="subtitle">提升游泳技能的专业体能训练</view>
+  </view>
+  
+  <view class="program-list">
+    <view class="program-item" wx:for="{{specialtyPrograms}}" wx:key="id" bindtap="onProgramTap" data-id="{{item.id}}">
+      <image class="program-image" src="{{item.image}}" mode="aspectFill"></image>
+      <view class="program-info">
+        <view class="program-title">{{item.title}}</view>
+        <view class="program-description">{{item.description}}</view>
+        <view class="program-meta">
+          <text class="program-duration">{{item.duration}}</text>
+          <text class="program-suitable">{{item.suitable}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="notice">
+    <view class="notice-title">训练须知</view>
+    <view class="notice-content">
+      <view class="notice-item">1. 请提前15分钟到达训练场地</view>
+      <view class="notice-item">2. 请穿着合适的运动服装和鞋子</view>
+      <view class="notice-item">3. 请自备水和毛巾</view>
+      <view class="notice-item">4. 如有身体不适，请及时告知教练</view>
+      <view class="notice-item">5. 训练前请做好充分的热身准备</view>
+    </view>
+  </view>
+</view>

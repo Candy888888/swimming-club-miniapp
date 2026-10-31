@@ -1,0 +1,53 @@
+<!--events.wxml-->
+<view class="page">
+  <view class="events-banner">
+    <swiper class="banner-swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image src="{{item.imageUrl}}" mode="aspectFill" class="banner-image"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  
+
+  
+  <view class="events-tabs">
+    <view class="tab {{activeTab === 'upcoming' ? 'active' : ''}}" bindtap="switchTab" data-tab="upcoming">即将开始</view>
+    <view class="tab {{activeTab === 'ongoing' ? 'active' : ''}}" bindtap="switchTab" data-tab="ongoing">正在进行</view>
+    <view class="tab {{activeTab === 'past' ? 'active' : ''}}" bindtap="switchTab" data-tab="past">历史赛事</view>
+  </view>
+  
+  <view class="events-list">
+    <view class="event-item" wx:for="{{filteredEvents}}" wx:key="id" bindtap="navigateToEventDetail" data-id="{{item.id}}">
+      <view class="event-card">
+        <image src="{{item.coverUrl}}" mode="aspectFill" class="event-cover"></image>
+        <view class="event-info">
+          <view class="event-title">{{item.title}}</view>
+          <view class="event-time">
+            <image src="/images/icons/time.png" class="icon-small"></image>
+            <text>{{item.time}}</text>
+          </view>
+          <view class="event-location">
+            <image src="/images/icons/location.png" class="icon-small"></image>
+            <text>{{item.location}}</text>
+          </view>
+          <view class="event-status {{item.status === 'upcoming' ? 'status-upcoming' : item.status === 'ongoing' ? 'status-ongoing' : 'status-past'}}">
+            {{item.status === 'upcoming' ? '即将开始' : item.status === 'ongoing' ? '正在进行' : '已结束'}}
+          </view>
+          <view class="event-categories">
+            <text class="category" wx:for="{{item.categories}}" wx:for-item="category" wx:key="*this">{{category}}</text>
+          </view>
+          <view class="event-participants">
+            <text>已报名 {{item.participantsCount}}/{{item.maxParticipants}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="empty-view" wx:if="{{filteredEvents.length === 0}}">
+    <image src="/images/icons/empty.png" class="empty-icon"></image>
+    <text class="empty-text">暂无赛事</text>
+  </view>
+  
+
+</view>

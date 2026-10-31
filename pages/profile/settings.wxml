@@ -1,0 +1,70 @@
+<!--settings.wxml-->
+<view class="container">
+  <view class="settings-list">
+    <view class="settings-group">
+      <view class="settings-item" bindtap="toggleNotification">
+        <view class="item-left">
+          <view class="item-icon notification"></view>
+          <text class="item-title">消息通知</text>
+        </view>
+        <switch checked="{{notificationEnabled}}" color="#3B82F6" bindchange="toggleNotification"></switch>
+      </view>
+      
+      <view class="settings-item" bindtap="navigateToPrivacy">
+        <view class="item-left">
+          <view class="item-icon privacy"></view>
+          <text class="item-title">隐私设置</text>
+        </view>
+        <view class="item-arrow"></view>
+      </view>
+    </view>
+    
+    <view class="settings-group">
+      <view class="settings-item" bindtap="clearCache">
+        <view class="item-left">
+          <view class="item-icon cache"></view>
+          <text class="item-title">清除缓存</text>
+        </view>
+        <text class="cache-size">{{cacheSize}}</text>
+      </view>
+      
+      <view class="settings-item" bindtap="checkUpdate">
+        <view class="item-left">
+          <view class="item-icon update"></view>
+          <text class="item-title">检查更新</text>
+        </view>
+        <text class="version-info">当前版本 {{version}}</text>
+      </view>
+    </view>
+    
+    <view class="settings-group">
+      <view class="settings-item" bindtap="navigateToAbout">
+        <view class="item-left">
+          <view class="item-icon about"></view>
+          <text class="item-title">关于我们</text>
+        </view>
+        <view class="item-arrow"></view>
+      </view>
+      
+      <view class="settings-item" bindtap="navigateToTerms">
+        <view class="item-left">
+          <view class="item-icon terms"></view>
+          <text class="item-title">用户协议</text>
+        </view>
+        <view class="item-arrow"></view>
+      </view>
+      
+      <view class="settings-item" bindtap="navigateToPrivacyPolicy">
+        <view class="item-left">
+          <view class="item-icon policy"></view>
+          <text class="item-title">隐私政策</text>
+        </view>
+        <view class="item-arrow"></view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+</view>

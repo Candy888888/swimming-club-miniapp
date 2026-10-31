@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g>
+    <!-- 礼品盒 -->
+    <rect x="30" y="40" width="40" height="30" fill="#4A86E8" rx="3" ry="3" />
+    
+    <!-- 礼品盒顶部 -->
+    <rect x="25" y="35" width="50" height="10" fill="#4A86E8" rx="3" ry="3" />
+    
+    <!-- 礼品盒丝带 -->
+    <rect x="45" y="35" width="10" height="35" fill="#1A5276" />
+    <rect x="25" y="45" width="50" height="10" fill="#1A5276" />
+    
+    <!-- 邀请文字 -->
+    <rect x="20" y="20" width="60" height="15" fill="#4A86E8" rx="5" ry="5" />
+    <text x="50" y="32" font-family="Arial" font-size="10" text-anchor="middle" fill="white">邀请有礼</text>
+    
+    <!-- 礼品盒底部装饰 -->
+    <rect x="40" y="75" width="20" height="5" fill="#4A86E8" />
+  </g>
+</svg>

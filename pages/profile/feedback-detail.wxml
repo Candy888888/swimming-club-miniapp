@@ -1,0 +1,53 @@
+<!--feedback-detail.wxml-->
+<view class="container">
+  <view class="feedback-card">
+    <view class="feedback-header">
+      <view class="feedback-type {{feedback.type}}">{{feedback.typeText}}</view>
+      <view class="feedback-status {{feedback.status}}">{{feedback.statusText}}</view>
+    </view>
+    
+    <view class="feedback-content">{{feedback.content}}</view>
+    
+    <view class="feedback-images" wx:if="{{feedback.images.length > 0}}">
+      <image 
+        wx:for="{{feedback.images}}" 
+        wx:key="index" 
+        src="{{item}}" 
+        mode="aspectFill"
+        bindtap="previewImage"
+        data-index="{{index}}"
+      ></image>
+    </view>
+    
+    <view class="feedback-info">
+      <view class="info-item">
+        <text class="info-label">提交时间：</text>
+        <text class="info-value">{{feedback.createTime}}</text>
+      </view>
+      <view class="info-item" wx:if="{{feedback.contact}}">
+        <text class="info-label">联系方式：</text>
+        <text class="info-value">{{feedback.contact}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">反馈编号：</text>
+        <text class="info-value">{{feedback.id}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="reply-section" wx:if="{{feedback.status === 'replied'}}">
+    <view class="section-title">官方回复</view>
+    <view class="reply-card">
+      <view class="reply-header">
+        <image src="/images/icons/logo.png" class="reply-avatar"></image>
+        <view class="reply-name">新升潮游泳馆客服</view>
+      </view>
+      <view class="reply-content">{{feedback.reply.content}}</view>
+      <view class="reply-time">{{feedback.reply.time}}</view>
+    </view>
+  </view>
+  
+  <view class="action-section">
+    <button class="action-btn" bindtap="addMoreFeedback">继续反馈</button>
+  </view>
+</view>

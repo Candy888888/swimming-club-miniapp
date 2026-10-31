@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/booking/booking",
+    "pages/events/events",
+    "pages/team/team",
+    "pages/profile/profile",
+    "pages/team/specialty",
+    "pages/profile/schedule",
+    "pages/profile/invite",
+    "pages/team/knowledge",
+    "pages/team/merchandise",
+    "pages/profile/membership",
+    "pages/profile/growth",
+    "pages/profile/wallet",
+    "pages/profile/coupon",
+    "pages/profile/feedback",
+    "pages/profile/feedback-history",
+    "pages/profile/feedback-detail",
+    "pages/profile/settings"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0099FF",
+    "navigationBarTitleText": "新升潮游泳馆",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#0099FF",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar_png/home.png",
+        "selectedIconPath": "images/tabbar_png/home_selected.png"
+      },
+      {
+        "pagePath": "pages/booking/booking",
+        "text": "约课",
+        "iconPath": "images/tabbar_png/booking.png",
+        "selectedIconPath": "images/tabbar_png/booking_selected.png"
+      },
+      {
+        "pagePath": "pages/events/events",
+        "text": "赛事",
+        "iconPath": "images/tabbar_png/events.png",
+        "selectedIconPath": "images/tabbar_png/events_selected.png"
+      },
+      {
+        "pagePath": "pages/team/team",
+        "text": "泳队",
+        "iconPath": "images/tabbar_png/team.png",
+        "selectedIconPath": "images/tabbar_png/team_selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabbar_png/profile.png",
+        "selectedIconPath": "images/tabbar_png/profile_selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

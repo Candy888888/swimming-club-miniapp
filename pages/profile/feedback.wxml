@@ -1,0 +1,56 @@
+<!--feedback.wxml-->
+<view class="container">
+  <view class="feedback-header">
+    <view class="header-title">您的反馈对我们很重要</view>
+    <view class="header-desc">请告诉我们您的想法，帮助我们提供更好的服务</view>
+  </view>
+  
+  <view class="feedback-form">
+    <view class="form-item">
+      <view class="form-label">反馈类型</view>
+      <view class="feedback-types">
+        <view class="type-tag {{selectedType === 'suggestion' ? 'active' : ''}}" bindtap="selectType" data-type="suggestion">建议</view>
+        <view class="type-tag {{selectedType === 'complaint' ? 'active' : ''}}" bindtap="selectType" data-type="complaint">投诉</view>
+        <view class="type-tag {{selectedType === 'praise' ? 'active' : ''}}" bindtap="selectType" data-type="praise">表扬</view>
+        <view class="type-tag {{selectedType === 'other' ? 'active' : ''}}" bindtap="selectType" data-type="other">其他</view>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">反馈内容</view>
+      <textarea class="feedback-content" placeholder="请详细描述您的问题或建议，以便我们更好地为您解决..." bindinput="inputContent" value="{{content}}"></textarea>
+      <view class="word-count">{{contentLength}}/500</view>
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">上传图片（选填）</view>
+      <view class="upload-area">
+        <view class="image-list">
+          <view class="image-item" wx:for="{{images}}" wx:key="index">
+            <image src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}"></image>
+            <view class="delete-btn" catchtap="deleteImage" data-index="{{index}}">×</view>
+          </view>
+          <view class="upload-btn" bindtap="chooseImage" wx:if="{{images.length < 3}}">
+            <view class="upload-icon">+</view>
+            <view class="upload-text">添加图片</view>
+          </view>
+        </view>
+        <view class="upload-tip">最多上传3张图片，每张不超过5MB</view>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <view class="form-label">联系方式（选填）</view>
+      <input class="contact-input" placeholder="请留下您的手机号或邮箱，方便我们联系您" bindinput="inputContact" value="{{contact}}"></input>
+    </view>
+  </view>
+  
+  <view class="action-section">
+    <button class="submit-btn" bindtap="submitFeedback" disabled="{{!canSubmit}}">提交反馈</button>
+  </view>
+  
+  <view class="feedback-history" bindtap="viewHistory">
+    <text>查看历史反馈</text>
+    <text class="arrow">></text>
+  </view>
+</view>

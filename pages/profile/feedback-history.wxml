@@ -1,0 +1,35 @@
+<!--feedback-history.wxml-->
+<view class="container">
+  <view class="feedback-list">
+    <block wx:if="{{feedbackList.length > 0}}">
+      <view class="feedback-item" wx:for="{{feedbackList}}" wx:key="id">
+        <view class="feedback-header">
+          <view class="feedback-type {{item.type}}">{{item.typeText}}</view>
+          <view class="feedback-status {{item.status}}">{{item.statusText}}</view>
+        </view>
+        <view class="feedback-content">{{item.content}}</view>
+        <view class="feedback-images" wx:if="{{item.images.length > 0}}">
+          <image 
+            wx:for="{{item.images}}" 
+            wx:for-item="image" 
+            wx:key="index" 
+            src="{{image}}" 
+            mode="aspectFill"
+            bindtap="previewImage"
+            data-urls="{{item.images}}"
+            data-current="{{image}}"
+          ></image>
+        </view>
+        <view class="feedback-footer">
+          <view class="feedback-time">{{item.createTime}}</view>
+          <view class="feedback-action" bindtap="viewDetail" data-id="{{item.id}}">查看详情</view>
+        </view>
+      </view>
+    </block>
+    
+    <view class="empty-tip" wx:else>
+      <image src="/images/icons/empty.png" class="empty-icon"></image>
+      <text>暂无反馈记录</text>
+    </view>
+  </view>
+</view>

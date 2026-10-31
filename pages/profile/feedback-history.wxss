@@ -1,0 +1,118 @@
+/* feedback-history.wxss */
+.container {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 反馈列表 */
+.feedback-list {
+  padding: 30rpx;
+}
+
+.feedback-item {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.feedback-type {
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.feedback-type.suggestion {
+  background-color: #E1F5FE;
+  color: #0288D1;
+}
+
+.feedback-type.complaint {
+  background-color: #FFEBEE;
+  color: #E53935;
+}
+
+.feedback-type.praise {
+  background-color: #E8F5E9;
+  color: #43A047;
+}
+
+.feedback-type.other {
+  background-color: #F5F5F5;
+  color: #757575;
+}
+
+.feedback-status {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.feedback-status.replied {
+  color: #43A047;
+}
+
+.feedback-status.processing {
+  color: #FB8C00;
+}
+
+.feedback-status.pending {
+  color: #757575;
+}
+
+.feedback-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 20rpx;
+}
+
+.feedback-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.feedback-images image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.feedback-action {
+  color: #3B82F6;
+}
+
+/* 空状态提示 */
+.empty-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.empty-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.5;
+}

@@ -1,0 +1,212 @@
+/* wallet.wxss */
+.container {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* 钱包头部 */
+.wallet-header {
+  background-color: #3B82F6;
+  padding: 40rpx 30rpx;
+  color: #fff;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+
+.balance-section {
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 28rpx;
+  opacity: 0.9;
+  margin-bottom: 10rpx;
+}
+
+.balance-amount {
+  font-size: 60rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+
+.balance-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.action-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 28rpx;
+  padding: 10rpx 40rpx;
+  margin: 0 20rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+  line-height: 1.5;
+}
+
+/* 钱包标签页 */
+.wallet-tabs {
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 0;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  color: #666;
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.tab.active {
+  color: #3B82F6;
+  font-weight: bold;
+}
+
+.tab.active:after {
+  content: '';
+  position: absolute;
+  bottom: -20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #3B82F6;
+  border-radius: 3rpx;
+}
+
+/* 钱包内容 */
+.wallet-content {
+  padding: 30rpx;
+}
+
+/* 交易记录 */
+.transaction-list {
+  background-color: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-info {
+  flex: 1;
+}
+
+.transaction-title {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.transaction-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.transaction-amount {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.income {
+  color: #34C759;
+}
+
+.expense {
+  color: #FF3B30;
+}
+
+/* 银行卡 */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.bank-card {
+  background-color: #0066b3;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  color: #fff;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.card-type {
+  font-size: 24rpx;
+  opacity: 0.8;
+  margin-bottom: 20rpx;
+}
+
+.card-number {
+  font-size: 36rpx;
+  letter-spacing: 4rpx;
+  margin-bottom: 40rpx;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-bank {
+  font-size: 28rpx;
+}
+
+.card-logo {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.add-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1rpx dashed #ddd;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.add-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* 空状态提示 */
+.empty-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.empty-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 20rpx;
+  opacity: 0.5;
+}

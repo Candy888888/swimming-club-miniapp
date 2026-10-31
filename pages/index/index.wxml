@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<view class="page">
+  <!-- 顶部大Banner -->
+  <swiper class="top-banner" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+    <swiper-item wx:for="{{topBanners}}" wx:key="id">
+      <image src="{{item.imageUrl}}" mode="aspectFill" class="banner-image"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 功能导航区 -->
+  <view class="nav-section">
+    <view class="nav-grid">
+      <view class="nav-item" wx:for="{{navItems}}" wx:key="id" bindtap="navigateTo" data-url="{{item.url}}">
+        <image src="{{item.icon}}" class="nav-icon"></image>
+        <text class="nav-text">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 小Banner -->
+  <view class="promo-section">
+    <view class="promo-title">
+    </view>
+    <swiper class="promo-banner" indicator-dots="true" autoplay="true" interval="4000" duration="500" circular="true">
+      <swiper-item wx:for="{{promoBanners}}" wx:key="id">
+        <image src="{{item.imageUrl}}" mode="aspectFill" class="promo-image"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 泳队介绍 -->
+  <view class="teams-section">
+    <view class="section-title">泳队介绍</view>
+    <view class="teams-grid">
+      <view class="team-item" wx:for="{{teams}}" wx:key="id" bindtap="navigateToTeam" data-id="{{item.id}}">
+        <view class="team-card">
+          <image src="{{item.logo}}" class="team-logo"></image>
+          <view class="team-info">
+            <text class="team-name">{{item.name}}</text>
+            <text class="team-desc">{{item.description}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 推荐赛事 -->
+  <view class="events-section">
+    <view class="section-title">推荐赛事</view>
+    <view class="events-scroll">
+      <scroll-view scroll-x="true" class="events-list">
+        <view class="event-item" wx:for="{{recommendedEvents}}" wx:key="id" bindtap="navigateToEvent" data-id="{{item.id}}">
+          <view class="event-card">
+            <image src="{{item.coverUrl}}" class="event-cover"></image>
+            <view class="event-info">
+              <text class="event-title">{{item.title}}</text>
+              <text class="event-date">{{item.date}}</text>
+              <view class="event-status">
+                <text>已报名 {{item.participants}}/{{item.maxParticipants}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 推荐视频 -->
+  <view class="videos-section">
+    <view class="section-title">推荐视频</view>
+    <view class="videos-grid">
+      <view class="video-item" wx:for="{{recommendedVideos}}" wx:key="id" bindtap="playVideo" data-id="{{item.id}}">
+        <view class="video-card">
+          <image src="{{item.coverUrl}}" class="video-cover"></image>
+          <view class="video-play-icon">
+          <image src="/images/icons/play.png" class="play-icon"></image>
+        </view>
+          <view class="video-info">
+            <text class="video-title">{{item.title}}</text>
+            <text class="video-views">{{item.views}}次观看</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <g>
+    <!-- 奖杯 -->
+    <path d="M40 30 L40 60 C40 70, 60 70, 60 60 L60 30 Z" fill="#F1C40F" stroke="#F39C12" stroke-width="2" />
+    
+    <!-- 奖杯顶部 -->
+    <rect x="35" y="25" width="30" height="5" fill="#F39C12" />
+    
+    <!-- 奖杯把手 -->
+    <path d="M60 40 C75 40, 75 50, 60 50" stroke="#F39C12" stroke-width="3" fill="none" />
+    <path d="M40 40 C25 40, 25 50, 40 50" stroke="#F39C12" stroke-width="3" fill="none" />
+    
+    <!-- 奖杯底座 -->
+    <rect x="45" y="60" width="10" height="5" fill="#F39C12" />
+    <rect x="35" y="65" width="30" height="5" fill="#F39C12" />
+  </g>
+</svg>
